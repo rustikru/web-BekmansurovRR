@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Sky</title>
+		<meta name="description" content="Skyrunning Russia" />
+		<meta name="author" content="Bekmansurov" />
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+
+	<body>
+	<script type= 'text/javascript'> 
+		function validate_form ( ){
+			var valid = true;
+			if ( jQuery('#pname').val() == "" )
+			{
+					alert ( "Пожалуйста заполните поле 'Ваше имя'." );
+					valid = false;
+					return valid;
+			}
+			if ( jQuery('#pemail').val() == "" )
+			{
+					alert ( "Пожалуйста заполните поле 'Email'." );
+					valid = false;
+					return valid;
+			}
+			if ( jQuery('#ptext').val() == "" )
+			{
+					alert ( "Пожалуйста заполните поле 'Сообщение'." );
+					valid = false;
+					return valid;
+			}
+			if ( jQuery('#pemail').val() !== "" ){
+				var email = jQuery('#posEmail').val();
+				var r = email.match(/^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i);
+				if (!r){
+					alert('Неверно введен email. ');
+					valid = false;
+					return valid;
+				}
+			}
+			return valid;
+		}
+	</script>
+		<div class="container">
+			<header class="lvl1 columns alpha omega">
+				<a href="index.html"><img class="brand" src="img/logo.png" alt="Tri"></a>
+				<nav class="main-nav lvl1 columns">
+					<ul class="columns">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="contact.html">Обратная связь</a></li>
+						<li><a href="parser.html">Парсер </a></li>
+					</ul>
+				</nav>
+			</header>
+	     	<div class="lvl1 columns row">
+		      	<div class="h-border">
+					<div class="heading"> <h1>Напишите нам</h1> </div>
+				</div>
+			</div>
+			
+			<div class="lvl1 columns row">	
+				<section class="row contact">
+					<form class='form_contact' action="send.php?action=add" method="post" onsubmit="return validate_form ( );">
+						 <fieldset >
+							<label for="pname">Имя*</label> <input name="pname" id="pname" type="text" placeholder="Имя"/>
+							<label for="pemail">Email*</label> <input id="pemail" name="pemail" placeholder="Email" type="text"/>			
+							 <label for="ptext">Сообщение*</label> <textarea id="ptext" name="ptext" placeholder="Ваше сообщение" ></textarea>
+							<input type="submit" value="Отправить"/>
+						</fieldset>
+					</form>
+					
+				</section>
+			</div>
+			<div class="clear"></div>
+			<footer class="row"><p>&copy; 2017 </p></footer>
+		</div>
+	</body>
+</html>

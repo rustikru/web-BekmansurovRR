@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Sky</title>
+		<meta name="description" content="Skyrunning Russia" />
+		<meta name="author" content="Bekmansurov" />
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+	<script>
+		function load_parser(){
+			var x_send = jQuery.ajax({
+				  url: 'send.php?action=parser&random='+Math.random(),
+				  dataType:"text",
+				  //data: data,              
+				  success: function(data){
+					 var i=0;
+					 var json = JSON.parse(data);
+					 var table = document.getElementById('phone');
+					 jQuery(table).html('');
+					 var row = table.insertRow(-1);
+					 var cells = row.insertCell(-1);
+					 jQuery(cells).html('№');
+					 cells = row.insertCell(-1);
+					 jQuery(cells).html('Название');
+					 cells = row.insertCell(-1);
+					 jQuery(cells).html('Цена');
+					 cells = row.insertCell(-1);
+					 jQuery(cells).html('Цена со скидкой');
+					 jQuery.each(json, function (key, value) {
+						 
+					    i++;
+						row = table.insertRow(-1);
+						cells = row.insertCell(-1);
+						jQuery(cells).html(i);
+						cells = row.insertCell(-1);
+						var img = document.createElement("img");
+						jQuery(img).attr('src',value.imgurl);
+						jQuery(cells).append(value.name);
+						 jQuery(cells).append("<br>");
+						jQuery(cells).append(jQuery(img));
+						cells = row.insertCell(-1);
+						jQuery(cells).html(value.price_ins);
+						cells = row.insertCell(-1);
+						jQuery(cells).html(value.price_del);
+					 });
+				  }
+			});
+		}
+	</script>
+	<body>
+		<div class="container">
+			<header class="lvl1 columns alpha omega">
+				<a href="index.html"><img class="brand" src="img/logo.png" alt="Tri"></a>
+				<nav class="main-nav lvl1 columns">
+					<ul class="columns">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="contact.html">Обратная связь</a></li>
+						<li><a href="parser.html">Парсер </a></li>
+					</ul>
+				</nav>
+			</header>
+			<div class="lvl1 columns row">
+		      	<div class="h-border">
+					<div class="heading">
+						<h2>Парсер №1</h2>
+					</div>
+				</div>
+				<div class="post-text">
+					<table id="phone" class="phone">
+						
+					</table>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<footer class="row">
+				<p>&copy; 2017 </p>
+			</footer>
+		</div>
+		<script>
+			load_parser(); // загрузка данных парсера
+		</script>
+	</body>
+</html>

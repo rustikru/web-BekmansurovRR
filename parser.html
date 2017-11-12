@@ -16,6 +16,7 @@
 				  //data: data,              
 				  success: function(data){
 					 var i=0;
+					 //console.log(data);
 					 var json = JSON.parse(data);
 					 var table = document.getElementById('phone');
 					 jQuery(table).html('');
@@ -29,7 +30,6 @@
 					 cells = row.insertCell(-1);
 					 jQuery(cells).html('Цена со скидкой');
 					 jQuery.each(json, function (key, value) {
-						 
 					    i++;
 						row = table.insertRow(-1);
 						cells = row.insertCell(-1);

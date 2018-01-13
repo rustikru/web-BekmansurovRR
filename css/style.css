@@ -6,14 +6,13 @@ menu, nav, section {
 	padding: 0;
 	border: 0;
 }
-
 body {
 	line-height: 1;
-	font-family: sans-serif;
+	font-family: 'Times New Roman, Arial','Helvetica';
 	color: #4b4b4b;
 }
 body {
-	font-family: 'Times New Roman, Arial', sans-serif;
+	font-family: 'Times New Roman, Arial','Helvetica';
 }
 .heading h1, h2, h3, h4, h5, h6 {
 	margin-right: auto;
@@ -26,7 +25,7 @@ body {
 	padding-right: 15px;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Times New Roman, Arial', sans-serif;
+	font-family: 'Times New Roman, Arial','Helvetica';
 	font-weight: 300;
 	text-transform: uppercase;
 	margin: 0;
@@ -49,7 +48,7 @@ a { color: #598F93; }
 }
 .main-nav a:link {
 	color: #828282;
-	font-family: 'Times New Roman, Arial', sans-serif;
+	font-family: 'Times New Roman, Arial','Helvetica';
 	font-weight: 300;
 	font-size: 1.2em;
 	line-height: 1.6em;
@@ -163,7 +162,12 @@ footer p{ text-align: left; }
     .columns.alpha   { margin-left: 0; }
     .columns.omega   { margin-right: 0; }
     .container .lvl1.columns    { width: 940px; }
-
+.loading {
+	text-align: center;
+}
+.loading img{
+	height: 100px;
+}
 /* Очистка(пустой блок) */
     .clear {
       clear: both;

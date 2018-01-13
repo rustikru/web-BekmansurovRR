@@ -1,0 +1,47 @@
+body > .embed-responsive-4by3 {
+    padding-bottom: 0;
+}
+#vk_groups .embed-responsive-4by3 {
+    padding-bottom: 400px;
+}
+
+ul#nav_left .combo > ul {
+    float:left;
+}
+
+#tooltip {
+    position:absolute;
+    z-index:999;
+    left:-9999px;
+    background-color:#dedede;
+    padding:5px;
+    border:1px solid #fff;
+    width:250px;
+}
+
+#tooltip p{
+    margin:0;https://biggeek.ru/admino4ka/index.php?module=StylesAdmin&file=vendor.min.css
+    padding:0;
+    background-color:#fff;
+    padding:2px 7px;
+}
+
+#tooltip span{
+
+}
+
+#tooltip a{
+
+}
+
+.specialStar {
+    position: absolute;
+    max-width: 80px;
+    z-index: 1000;
+
+}
+
+@media (max-width:770px){
+    .specialStar {
+        width:10% !important;
+}}

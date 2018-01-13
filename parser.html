@@ -45,6 +45,7 @@
 						cells = row.insertCell(-1);
 						jQuery(cells).html(value.price_del);
 					 });
+					  jQuery('.loading').hide();
 				  }
 			});
 		}
@@ -64,7 +65,7 @@
 			<div class="lvl1 columns row">
 		      	<div class="h-border">
 					<div class="heading">
-						<h2>Парсер №1</h2>
+						<h2>Парсер товаров с www.biggeek.ru</h2>
 					</div>
 				</div>
 				<div class="post-text">
@@ -72,6 +73,9 @@
 						
 					</table>
 				</div>
+			</div>
+			<div class="loading">
+				<img src="img/loading.gif">
 			</div>
 			<div class="clear"></div>
 			<footer class="row">

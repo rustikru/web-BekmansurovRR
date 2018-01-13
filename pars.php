@@ -1,6 +1,6 @@
 <?php
 	require_once( "block/bd.php" );
-	require_once("lib/phpQuery-onefile.php");
+	//require_once("lib/phpQuery-onefile.php");
 	require_once("lib/simple_html_dom.php");
 // парсер с помощью библиотеки simple_html_dom
 function run_pars_dom () {
@@ -10,8 +10,8 @@ function run_pars_dom () {
 	$c = 0;
 	do { 
 		# Адресс сайта
-		//$url = "https://biggeek.ru/catalog/cmartfony-xiaomi";
-		$url = "https://biggeek.ru/catalog/noutbuki-apple?page=".$i;
+		$url = "https://biggeek.ru/catalog/cmartfony-xiaomi"; // адрес реального сайта
+		//$url = "html_source/elektronnie-knigi.htm"; // сохраненная страница
 		//echo $url;
 		$html = file_get_html($url);
 		foreach($html->find('div.item-wrap') as $product) {
